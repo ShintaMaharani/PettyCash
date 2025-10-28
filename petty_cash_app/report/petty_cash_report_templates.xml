@@ -8,7 +8,7 @@
         <div class="page" style="padding: 20px;">
 
           <!-- ======== HEADER ======== -->
-            <table style="width:100%; margin-bottom:20px;">
+<!--            <table style="width:100%; margin-bottom:20px;">-->
               <tr>
                 <td style="width:50%; text-align:left; vertical-align:top;">
                   <!-- Pastikan path logo sesuai -->
@@ -20,12 +20,12 @@
               </tr>
               <tr>
                 <td colspan="2" style="text-align:center; padding-top:10px;">
-                  <h2 style="margin:0; font-weight:700; color:#0000;">Voucher Cash In</h2>
+                  <h2 style="margin:0; font-weight:700; text-align:center; color:#0000;">Voucher Cash In</h2>
                 </td>
               </tr>
-            </table>
+<!--            </table>-->
           <!-- ======== TABLE CONTENT ======== -->
-          <table style="width:100%; border-collapse:collapse; margin-top:10px; border:1px solid #000;">
+          <table style="width:100%; border-collapse:collapse; margin-top:10px;">
             <tr style="border:1px solid #000;">
               <td style="width:25%; border:1px solid #000; padding:6px;"><strong>Voucher No.</strong></td>
               <td style="border:1px solid #000; padding:6px;">
@@ -104,7 +104,7 @@
         <t t-set="today" t-value="datetime.date.today()"/>
 
         <!-- ======== HEADER ======== -->
-            <table style="width:100%; border:none !important; margin-bottom:20px;">
+<!--            <table>-->
               <tr style="border:none !important;">
                 <td style="width:50%; text-align:left; vertical-align:top; border:none !important;">
                   <!-- Pastikan path logo sesuai -->
@@ -115,12 +115,12 @@
                          style="padding: 5px; vertical-align: middle; height: auto; width: 200px;"/>
                 </td>
               </tr>
-              <tr style="border:none !important;">
-                <td colspan="2" style="text-align:center; padding-top:10px; border:none !important;">
-                  <h2 style="margin:0; font-weight:700; color:#0000;">Voucher Cash In</h2>
+              <tr>
+                <td colspan="2" style=" padding-top:10px; border:none !important;">
+                  <h2 style="margin:0; text-align:center; font-weight:700; color:#0000;">Voucher Cash In</h2>
                 </td>
               </tr>
-            </table>
+<!--            </table>-->
 
           <!-- ======== TABLE CONTENT ======== -->
           <table class="table table-sm mt-3" style="width:100%; border-collapse:collapse;">
