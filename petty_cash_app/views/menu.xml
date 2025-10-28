@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ROOT MENU -->
+    <menuitem id="petty_cash_root"
+              name="Petty Cash"
+              sequence="10"/>
+
+    <!-- SUB-MENU: Cash In -->
+    <menuitem id="petty_cash_in_menu"
+              name="Cash In"
+              parent="petty_cash_root"
+              action="petty_cash_app.action_petty_cash_in"
+              sequence="10"
+              groups="petty_cash_app.group_petty_cash_user,petty_cash_app.group_petty_cash_manager"/>
+
+    <!-- SUB-MENU: Cash Out -->
+    <menuitem id="petty_cash_out_menu"
+              name="Cash Out"
+              parent="petty_cash_root"
+              action="petty_cash_app.action_petty_cash_out"
+              sequence="20"
+              groups="petty_cash_app.group_petty_cash_user,petty_cash_app.group_petty_cash_manager"/>
+
+    <!-- SUB-MENU: Reports -->
+    <menuitem id="menu_petty_cash_report_root"
+              name="Reports"
+              parent="petty_cash_root"
+              sequence="30"
+              groups="petty_cash_app.group_petty_cash_user,petty_cash_app.group_petty_cash_manager"/>
+
+    <!-- CHILD MENU: Petty Cash In Report -->
+    <menuitem id="menu_petty_cash_in_report"
+              name="Petty Cash In Report"
+              parent="menu_petty_cash_report_root"
+              action="petty_cash_app.action_report_pc_in"
+              sequence="31"/>
+
+</odoo>

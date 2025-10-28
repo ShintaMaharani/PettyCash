@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petty_cash_in_user,access.petty.cash.in.user,model_petty_cash_in,petty_cash_app.group_petty_cash_user,1,0,0,0
+access_petty_cash_in_manager,access.petty.cash.in.manager,model_petty_cash_in,petty_cash_app.group_petty_cash_manager,1,1,1,1
+access_petty_cash_out_user,access.petty.cash.out.user,model_petty_cash_out,petty_cash_app.group_petty_cash_user,1,0,0,0
+access_petty_cash_out_manager,access.petty.cash.out.manager,model_petty_cash_out,petty_cash_app.group_petty_cash_manager,1,1,1,1
+access_petty_cash_out_line_user,access.petty.cash.out.line.user,model_petty_cash_out_line,petty_cash_app.group_petty_cash_user,1,1,1,1
+access_petty_cash_out_line_manager,access.petty.cash.out.line.manager,model_petty_cash_out_line,petty_cash_app.group_petty_cash_manager,1,1,1,1
+access_approval_wizard_user,access.approval_wizard.user,model_petty_cash_approval_wizard,base.group_user,1,0,1,0
+access_approval_wizard_manager,access.approval_wizard.manager,model_petty_cash_approval_wizard,petty_cash_app.group_petty_cash_manager,1,0,1,0

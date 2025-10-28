@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Profit and Loss -->
+    <record id="financial_report_pdf" model="ir.actions.report">
+        <field name="name">Profit and Loss (Custom)</field>
+        <field name="model">financial.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">custom_report.report_financial</field>
+        <field name="report_file">custom_report.report_financial</field>
+        <field name="print_report_name">'Profit_Loss_Report_%s' % (object.name if object else '')</field>
+    </record>
+
+    <!-- Balance Sheet -->
+    <record id="balance_sheet_pdf" model="ir.actions.report">
+        <field name="name">Balance Sheet (Custom)</field>
+        <field name="model">financial.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">custom_report.report_balance_sheet</field>
+        <field name="report_file">custom_report.report_balance_sheet</field>
+        <field name="print_report_name">'Balance_Sheet_Report_%s' % (object.name if object else '')</field>
+    </record>
+</odoo>

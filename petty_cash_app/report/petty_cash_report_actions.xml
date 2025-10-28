@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ======== REPORT ACTIONS ======== -->
+    <record id="action_report_pc_in" model="ir.actions.report">
+        <field name="name">PCin</field>
+        <field name="model">petty.cash.in</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">petty_cash_app.report_petty_cash_in_tmpl</field>
+        <field name="report_file">petty_cash_app.report_petty_cash_in_tmpl</field>
+        <field name="print_report_name">'PCIN - %s' % (object.name or 'NO-NAME')</field>
+        <field name="binding_model_id" ref="petty_cash_app.model_petty_cash_in"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_pc_out" model="ir.actions.report">
+        <field name="name">PCout</field>
+        <field name="model">petty.cash.out</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">petty_cash_app.report_petty_cash_out_tmpl</field>
+        <field name="report_file">petty_cash_app.report_petty_cash_out_tmpl</field>
+        <field name="print_report_name">'PCOUT - %s' % (object.name or 'NO-NAME')</field>
+        <field name="binding_model_id" ref="petty_cash_app.model_petty_cash_out"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <record id="action_petty_cash_report_main" model="ir.actions.act_window">
+        <field name="name">Petty Cash Report</field>
+        <field name="res_model">petty.cash.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Petty Cash Report!
+            </p>
+        </field>
+    </record>
+
+<!--    <record id="action_petty_cash_in_report" model="ir.actions.act_window">-->
+<!--        <field name="name">Petty Cash In Report</field>-->
+<!--        <field name="res_model">petty.cash.in.report</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                No Petty Cash In Report available yet.-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+</odoo>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- ================= VOUCHER CASH IN ================= -->
+  <template id="report_petty_cash_in_tmpl">
+    <t t-call="web.basic_layout">
+      <t t-foreach="docs" t-as="o">
+        <div class="page" style="padding: 20px;">
+
+          <!-- ======== HEADER ======== -->
+            <table style="width:100%; margin-bottom:20px;">
+              <tr>
+                <td style="width:50%; text-align:left; vertical-align:top;">
+                  <!-- Pastikan path logo sesuai -->
+                    <img t-if="o.company_id.logo"
+                         t-att-src="image_data_uri(o.company_id.logo)"
+                         alt="Company Logo"
+                         style="padding: 5px; vertical-align: middle; height: auto; width: 200px;"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align:center; padding-top:10px;">
+                  <h2 style="margin:0; font-weight:700; color:#0000;">Voucher Cash In</h2>
+                </td>
+              </tr>
+            </table>
+          <!-- ======== TABLE CONTENT ======== -->
+          <table style="width:100%; border-collapse:collapse; margin-top:10px; border:1px solid #000;">
+            <tr style="border:1px solid #000;">
+              <td style="width:25%; border:1px solid #000; padding:6px;"><strong>Voucher No.</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <t t-esc="o.name or ''"/>
+              </td>
+            </tr>
+            <tr style="border:1px solid #000;">
+              <td style="border:1px solid #000; padding:6px;"><strong>Date</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <t t-esc="(format_date and format_date(o.date)) or (o.date or '')"/>
+              </td>
+            </tr>
+            <tr style="border:1px solid #000;">
+              <td style="border:1px solid #000; padding:6px;"><strong>Amount</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <t t-esc="(format_amount and format_amount(o.amount, o.currency_id)) or (o.amount or 0.0)"/>
+              </td>
+            </tr>
+            <tr style="border:1px solid #000;">
+              <td style="border:1px solid #000; padding:6px;"><strong>From</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <t t-esc="o.transfer_account_id.display_name or ''"/>
+              </td>
+            </tr>
+            <tr style="border:1px solid #000;">
+              <td style="border:1px solid #000; padding:6px;"><strong>To</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <t t-esc="o.received_account_id.display_name or ''"/>
+              </td>
+            </tr>
+            <tr style="border:1px solid #000;">
+              <td style="border:1px solid #000; padding:6px;"><strong>Notes</strong></td>
+              <td style="border:1px solid #000; padding:6px;">
+                <div t-field="o.notes"/>
+              </td>
+            </tr>
+          </table>
+
+          <!-- ======== SIGNATURE AREA ======== -->
+          <div style="margin-top:60px; text-align:center; width:100%;">
+            <table style="width:100%; border:1px solid #000; border-collapse:collapse; text-align:center;">
+              <tr>
+                <td style="width:33%; border:1px solid #000; padding:15px;">
+                  <p><strong>Prepared by</strong></p>
+                  <div style="height:50px;"></div>
+                  <p>__________________________</p>
+                </td>
+                <td style="width:33%; border:1px solid #000; padding:15px;">
+                  <p><strong>Checked by</strong></p>
+                  <div style="height:50px;"></div>
+                  <p>__________________________</p>
+                </td>
+                <td style="width:33%; border:1px solid #000; padding:15px;">
+                  <p><strong>Approved by</strong></p>
+                  <div style="height:50px;"></div>
+                  <p>__________________________</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pisahkan halaman antar record -->
+        <div style="page-break-after: always;"></div>
+      </t>
+    </t>
+  </template>
+
+
+
+
+  <!-- ================= PETTY CASH OUT ================= -->
+  <template id="report_petty_cash_out_tmpl">
+    <t t-call="web.basic_layout">
+      <t t-foreach="docs" t-as="o">
+        <t t-set="today" t-value="datetime.date.today()"/>
+
+        <!-- ======== HEADER ======== -->
+            <table style="width:100%; border:none !important; margin-bottom:20px;">
+              <tr style="border:none !important;">
+                <td style="width:50%; text-align:left; vertical-align:top; border:none !important;">
+                  <!-- Pastikan path logo sesuai -->
+                    <img t-if="o.company_id.logo"
+                         t-att-src="image_data_uri(o.company_id.logo)"
+                         alt="Company Logo"
+                         class="float-right text-center"
+                         style="padding: 5px; vertical-align: middle; height: auto; width: 200px;"/>
+                </td>
+              </tr>
+              <tr style="border:none !important;">
+                <td colspan="2" style="text-align:center; padding-top:10px; border:none !important;">
+                  <h2 style="margin:0; font-weight:700; color:#0000;">Voucher Cash In</h2>
+                </td>
+              </tr>
+            </table>
+
+          <!-- ======== TABLE CONTENT ======== -->
+          <table class="table table-sm mt-3" style="width:100%; border-collapse:collapse;">
+            <tr>
+              <td style="width:30%;"><strong>Voucher No.</strong></td>
+              <td><t t-esc="o.name or ''"/></td>
+            </tr>
+            <tr>
+              <td><strong>Date</strong></td>
+              <td><t t-esc="o.date and o.date.strftime('%d/%m/%Y') or ''"/></td>
+            </tr>
+            <tr>
+              <td><strong>Source Account</strong></td>
+              <td><t t-esc="o.source_account_id.display_name or ''"/></td>
+            </tr>
+            <tr>
+              <td><strong>Total Amount</strong></td>
+              <td>
+                <t t-esc="(format_amount and format_amount(o.amount_total, o.currency_id)) or (o.amount_total or 0.0)"/>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Notes</strong></td>
+              <td><div t-field="o.notes"/></td>
+            </tr>
+          </table>
+
+          <!-- Daftar pengeluaran -->
+          <h3 class="mt-4">List of Expenses</h3>
+          <table class="table table-bordered mt-2" style="width:100%; border-collapse:collapse; border:1px solid #000;">
+            <thead>
+              <tr style="background:#f2f2f2;">
+                <th style="border:1px solid #000;">COA</th>
+                <th style="border:1px solid #000;">Description</th>
+                <th style="border:1px solid #000; text-align:right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="o.line_ids" t-as="l">
+                <tr>
+                  <td style="border:1px solid #000;"><t t-esc="l.account_id.display_name or ''"/></td>
+                  <td style="border:1px solid #000;"><t t-esc="l.description or ''"/></td>
+                  <td style="border:1px solid #000; text-align:right;">
+                    <t t-esc="(format_amount and format_amount(l.amount, o.currency_id)) or (l.amount or 0.0)"/>
+                  </td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+
+          <!-- Bagian tanda tangan -->
+          <div style="margin-top:60px; text-align:center; width:100%;">
+            <table style="width:100%; border:none; text-align:center; margin-top:30px;">
+              <tr>
+                <td style="width:33%;">
+                  <p><strong>Prepared by</strong></p>
+                  <div style="height:60px;"></div>
+                  <p>__________________________</p>
+                </td>
+                <td style="width:33%;">
+                  <p><strong>Checked by</strong></p>
+                  <div style="height:60px;"></div>
+                  <p>__________________________</p>
+                </td>
+                <td style="width:33%;">
+                  <p><strong>Approved by</strong></p>
+                  <div style="height:60px;"></div>
+                  <p>__________________________</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        <div style="page-break-after: always;"></div>
+      </t>
+    </t>
+  </template>
+
+</odoo>

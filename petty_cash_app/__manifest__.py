@@ -1,0 +1,22 @@
+{
+    "name": "Petty Cash",
+    "version": "17.0.1.0.0",
+    "summary": "Petty Cash App",
+    "category": "Accounting",
+    "author": "Your Team",
+    "license": "LGPL-3",
+    "depends": ["base", "account"],
+    "data": [
+        "security/petty_cash_groups.xml",
+        "security/ir.model.access.csv",
+        "data/sequences.xml",
+        "views/approval_wizard_views.xml",
+        "views/petty_cash_in_views.xml",
+        "views/petty_cash_out_views.xml",
+        "report/petty_cash_report_actions.xml",
+        "report/petty_cash_report_templates.xml",
+        "views/menu.xml",
+    ],
+    "application": True,
+    "installable": True,
+}

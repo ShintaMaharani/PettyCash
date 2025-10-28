@@ -1,0 +1,42 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_asset_vehicle_tree" model="ir.ui.view">
+        <field name="name">asset.vehicle.tree</field>
+        <field name="model">asset.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Daftar Kendaraan">
+                <field name="license_plate"/>
+                <field name="brand"/>
+                <field name="model"/>
+                <field name="year"/>
+                <field name="purchase_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_asset_vehicle_form" model="ir.ui.view">
+        <field name="name">asset.vehicle.form</field>
+        <field name="model">asset.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Detail Kendaraan">
+                <sheet>
+                    <group>
+                        <field name="license_plate"/>
+                        <field name="brand"/>
+                        <field name="model"/>
+                        <field name="vin_number"/>
+                        <field name="engine_number"/>
+                        <field name="year"/>
+                        <field name="purchase_date"/>
+                        <field name="purchase_value"/>
+                        <field name="responsible_id"/>
+                        <field name="location_id"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

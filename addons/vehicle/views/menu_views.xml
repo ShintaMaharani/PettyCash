@@ -1,0 +1,18 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_asset_vehicle" model="ir.actions.act_window">
+        <field name="name">Asset Kendaraan</field>
+        <field name="res_model">asset.vehicle</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_asset_vehicle_root"
+              name="Asset Management"
+              sequence="10"/>
+    <menuitem id="menu_asset_vehicle"
+              name="Kendaraan"
+              parent="menu_asset_vehicle_root"
+              action="action_asset_vehicle"
+              sequence="20"/>
+</odoo>

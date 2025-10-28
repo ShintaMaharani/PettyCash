@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="seq_asset_vehicle" model="ir.sequence">
+        <field name="name">Asset Vehicle Sequence</field>
+        <field name="code">asset.vehicle</field>
+        <field name="prefix">VEH</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="seq_petty_cash_in" model="ir.sequence">
+    <field name="name">Petty Cash In</field>
+    <field name="code">petty.cash.in</field>
+    <field name="prefix">PCI/%(year)s/</field>
+    <field name="padding">4</field>
+  </record>
+
+  <record id="seq_petty_cash_out" model="ir.sequence">
+    <field name="name">Petty Cash Out</field>
+    <field name="code">petty.cash.out</field>
+    <field name="prefix">PCO/%(year)s/</field>
+    <field name="padding">4</field>
+  </record>
+</odoo>
